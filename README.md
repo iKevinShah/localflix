@@ -38,6 +38,12 @@ Supported structure is, a directory which contains a list of directories which a
 
 ## Setting up
 
+### Easy way (run via docker)
+
+1. I have published an image for localflix. More details : https://github.com/iKevinShah/localflix-docker
+
+### The older way
+
 1. Upload this to / or any directory on your local webserver.
 2. Make sure the video directory is available(accessible) on web server.
 3. Create JSON file (manually OR via the filesystem_json_creator.sh) script.
@@ -49,7 +55,7 @@ var app = new App(Site Name, JSONDataFileLocation, PathOfVideosDirectoryOnFileSy
 
 5. Enjoy your local media.
 
-Screenshots: 
+## Screenshots: 
 
 ### Homepage
 ![Home page](https://www.ikevinshah.com/static/localflix/localflix-home.png)
