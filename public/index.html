@@ -1,0 +1,69 @@
+<html lang="en">
+
+<head>
+    <title>Simple Localflix</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/plyr.3.6.1.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" charset="utf-8" src="/static/cash.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/static/plyr.polyfilled.3.6.1.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/static/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="back"></div>
+        <div id="page-title">
+            <h3 class="text-center">Simple Localflix</h3>
+        </div>
+    </header>
+    <main>
+        <section id="directories-list"></section>
+        <section id="videos-list"></section>
+        <section id="video-player"></section>
+        <section id="error"></section>
+    </main>
+    <script>
+        $(function () {
+
+            //Initialize the app 
+            //App(Site Name, DataFileLocation, PathOnFileSystem, RelativePath);
+            var app = new App('Simple Localflix', '/data.json', '/data/public/videos/', '/videos/');
+
+            //Initialize and show initial content
+            app.initialize();
+
+            //From HomePage to Directory
+            $(document).on('click', '.directory', function (event) {
+                var directory_name = $(this).attr('data-listing');
+                app.showVideosOfDirectory(directory_name);
+            });
+
+            //From directory listing to a particular video
+            $(document).on('click', '.video', function (event) {
+                var video_url = $(this).attr('data-video');
+                app.showVideo(video_url, $(this).html());
+            });
+
+            //From Videos List back to directory listing.
+            $(document).on('click', '#goBack', function (event) {
+                app.goBackToDirectories(true);
+            });
+
+            //From Videos List back to directory listing due to some errors.
+            $(document).on('click', '#goBackFromError', function (event) {
+                app.goBackToDirectories(false);
+            });
+
+            //From a video to video List
+            $(document).on('click', '#goBackToVideoList', function (event) {
+                var video_currently_playing = $(this).attr('data-video');
+                app.goBackToVideosListing(video_currently_playing);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+@charset "UTF-8";
+
+*, *:before, *:after{
+    background-repeat:no-repeat;
+    box-sizing:border-box
+}
+
+*{
+    text-shadow:none;
+    background:transparent;
+    border:0;
+    font:inherit;
+    margin:0;
+    outline:none;
+    padding:0;
+    text-align:left;
+    text-decoration:none;
+    vertical-align:baseline;
+    z-index:1;
+    transform:none
+}
+
+p, div, article, aside, audio, details, dialog, embed, figure, footer, header, hgroup, menu, nav, section, summary, video, wbr, main{
+    display:block
+}
+
+bdi, figcaption, keygen, mark, meter, progress, rp, rt, ruby, time{
+    display:inline
+}
+
+acronym, applet, big, center, dir, font, frame, frameset, noframes, s, strike, tt, u, template{
+    display:none
+}
+
+summary{
+    display:list-item
+}
+
+canvas{
+    display:inline-block
+}
+
+audio, canvas, iframe, img, svg, video{
+    vertical-align:middle
+}
+
+audio:not([controls]){
+    display:none;
+    height:0
+}
+
+ol, ul{
+    list-style:none
+}
+
+blockquote, q{
+    quotes:none
+}
+
+blockquote:before, blockquote:after, q:before, q:after{
+    content:''
+}
+
+table{
+    border-collapse:collapse;
+    border-spacing:0
+}
+
+button, input{
+    overflow:visible
+}
+
+button, select{
+    text-transform:none
+}
+
+::-webkit-input-placeholder{
+    color:inherit;
+    opacity:0.5
+}
+
+::-webkit-search-decoration{
+    -webkit-appearance:none
+}
+
+::-webkit-file-upload-button{
+    -webkit-appearance:button
+}
+
+a, area, button, input, label, select, summary, textarea, [tabindex]{
+    -ms-touch-action:manipulation;
+    touch-action:manipulation
+}
+
+[aria-busy="true"]{
+    cursor:progress
+}
+
+[aria-controls]{
+    cursor:pointer
+}
+
+[aria-disabled], [disabled]{
+    cursor:not-allowed
+}
+
+[aria-hidden="false"][hidden]:not(:focus){
+    clip:rect(0, 0, 0, 0);
+    display:inherit;
+    position:absolute
+}
+/* Start */
+@font-face {
+    font-family:system;
+    font-style: normal;
+    font-weight: 400;
+    src:local(system-ui),
+    local(-apple-system),
+    local(BlinkMacSystemFont),
+    local('Segoe UI'),
+    local(Roboto),
+    local(Oxygen),
+    local(Ubuntu),
+    local(Cantarell),
+    local('Open Sans'),
+    local('Noto Sans'),
+    local('Fira Sans'),
+    local('Droid Sans'),
+    local('Apple Color Emoji'),
+    local('Segoe UI Emoji'),
+    local('Segoe UI Symbol'),
+    local('Noto Color Emoji'),
+    url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff") format("woff");
+}
+
+html{
+    height:100%;
+    font-size: 100%;
+    line-height: 1.5;
+    font-family: 'system', 'Helvetica Neue',Helvetica, Arial, sans-serif;
+    -ms-text-size-adjust:100%;
+    -webkit-text-size-adjust:100%;
+    letter-spacing:.00625rem;
+    word-spacing:.125rem;
+    word-break:normal;
+    -webkit-font-smoothing:subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-overflow-scrolling:touch;
+    text-rendering:optimizeLegibility;
+    text-overflow:ellipsis
+}
+
+@media screen and (max-width:1024px){
+    html{
+        font-size:93.75%
+    }
+}
+
+@media screen and (max-width:768px){
+    html{
+        font-size:87.5%
+    }
+}
+
+@media screen and (max-width:480px){
+    html{
+        font-size:81.25%
+    }
+}
+
+body{
+    min-width:320px;
+    min-height:480px;
+    background:#282828;
+    color:#eee;
+}
+
+#page-title{
+    display:block;
+    background:#c4302b;
+    height:4rem;
+}
+#page-title h3{
+    text-align: center;
+    font-size: 1.25rem;
+    padding-top: 1rem
+}
+#back{
+    position:absolute;
+    top:0;
+    left:0
+}
+#back a {
+border: .125rem solid #9d2622;
+border-left: none;
+padding:.37rem 1.5rem;
+margin: .75rem 1.5rem;
+border-radius:.5rem;
+display: inline-block;
+font-weight: bolder;
+background:#d95652;
+color: #fff;
+text-decoration: none;
+position: relative;
+} 
+
+#back a:before {
+border:.25rem solid #9d2622;
+background:#d95652;
+border-width: 0 0 .125rem .125rem;
+content: "";
+width: 1.4rem;
+height: 1.75rem;
+position: absolute;
+left: -.55rem;
+top:.125rem;
+transform: rotate(45deg);
+}
+
+#back a:hover::before, #back a:hover{
+    background: #d71e18;
+}
+
+#back a span{
+    position: relative;
+    z-index: 2;
+}
+#directories-list a, #videos-list a{
+    display:block;
+    padding:1.25rem 1.25rem 1.25rem 1.75rem;
+    border-bottom:.125rem solid #444;
+    font-size:1.25rem;
+    color:#ddd;
+}
+
+#directories-list a:hover, #videos-list a:hover{
+background:#777;
+}
+
+#videos-list a:first-child, #directories-list a:first-child{
+    border-top:none
+}
+#videos-list a:last-child, #directories-list a:last-child{
+    border-bottom:none
+}
+
+#error-msg{
+    position:relative;
+    background:#f18884;
+    border:.25rem solid #d71e18;
+    border-radius: .5rem;
+    color:#fff;
+    border-radius:.5rem;
+    min-height:10rem;
+    padding:2rem 2rem 2rem 10rem;
+    margin:2rem;
+    font-size:3rem;
+}
+#error-msg:before{
+    position: absolute;
+    top:1.5rem;
+    left:1.25rem;
+    content:'🚨';
+    font-size:4rem;
+}
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+  }
+}
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+  }
+}
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight
+}
+@-webkit-keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0)
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0)
+  }
+}
+
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft
+}
+
+@-webkit-keyframes slideOutRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0)
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0)
+  }
+}
+
+.slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight
+}
+
+#directories-list, #videos-list, #video-player{
+  -webkit-animation-duration: 400ms;
+  animation-duration: 400ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both
+}
