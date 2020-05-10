@@ -4,7 +4,7 @@ A self-hosted simplistic solution to stream your local videos. Should work well 
 
 ## Why?
 
-Got tired of sending recorded videos from my phone to Mom, dad, etc. Thought this is better instead. Also thought it'd be fun.
+Got tired of sending and receiving recorded videos thought this is better instead. Also thought it'd be fun.
 
 ## Working
 The solution expects a json file with the following structure:
