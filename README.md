@@ -1,6 +1,10 @@
 # Simple Localflix
 
-A self-hosted simplistic solution to stream your local videos. Works well with any webserver (without any modules). Tested with nginx.
+A self-hosted simplistic solution to stream your local videos. Should work well with any webserver. Tested with nginx (1.17).
+
+## Why?
+
+Got tired of sending recorded videos from my phone to Mom, dad, etc. Thought this is better instead. Also thought it'd be fun.
 
 ## Working
 The solution expects a json file with the following structure:
